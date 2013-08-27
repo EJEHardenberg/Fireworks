@@ -54,10 +54,15 @@ var Fireworks = (function() {
     // set the dimensions on the canvas
     setMainCanvasDimensions();
 
+    //Add emily's happy birthdcontext.font = "bold 12px sans-serif";
+
+
     // add the canvas in
     document.body.appendChild(mainCanvas);
     document.addEventListener('mouseup', createFirework, true);
     document.addEventListener('touchend', createFirework, true);
+
+    document.addEventListener('mousemove', createFirework, true);
 
     // and now we set off
     update();
@@ -69,6 +74,10 @@ var Fireworks = (function() {
    */
   function createFirework() {
     createParticle();
+    c = Math.random()*100;
+    document.getElementById('emtext').style.color = "hsl(" + Math.round(c * 3.6) + ",100%,60%)";
+    c = Math.random()*100;
+    document.getElementById('emtext2').style.color = "hsl(" + Math.round(c * 3.6) + ",100%,60%)";
   }
 
   /**
